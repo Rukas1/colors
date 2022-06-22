@@ -59,7 +59,7 @@ h1 span {
 
 .item {
     border-radius: 25px;
-    background-color: var(--shadow);
+    /* background-color: var(--shadow); */
 }
 
 .color {
@@ -67,12 +67,12 @@ h1 span {
     width: 100%;
     border-radius: 25px;
     height: 100%;
-    transition: 0.1s ease-out;
+    transition: 0.1s ease-in-out;
 }
-
+/* 
 .item:hover .color{
     transform: translate(-6px, -6px);   
-}
+} */
 
 #alert {
     margin-bottom: 35px;
@@ -97,7 +97,8 @@ h1 span {
 
 .item:active .color {
     background-color: var(--clickBackColor)!important;
-    transform: translate(-0%, -0%);
+    /* transform: translate(-0%, -0%); */
+    transform: scale(1.1);
 }
 
 .item:active .hexa {
