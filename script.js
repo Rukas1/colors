@@ -16,8 +16,10 @@ function getRandomColor() {
 function createRandomItem(nbItem) {
     for (let i = 0 ; i < nbItem ; i++) {
         let color = getRandomColor();
-        let item = `<div class="item" style="background-color:${color};">
-                        <h4 class="hexa">${color}</h4>
+        let item = `<div class="item">
+                        <div class="color" style="background-color:${color};">
+                            <h4 class="hexa">${color}</h4>
+                        </div>
                     </div>`;
         container.insertAdjacentHTML("beforeend", item);
     }

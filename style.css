@@ -7,23 +7,37 @@
     outline: none;
 }
 
+:root {
+    /* Light Theme */
+    --backColor: #fff;
+    --h1Color: #000;
+    --hexaTextColor: #fff;
+    --clickBackColor: #fff;
+    --clickTextColor: #000;
+    --selectionBackColor: #333;
+    --selectionColor: #fff;
+    --shadow: #454545;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: var(--backColor);
 }
 
 h1 {
     font-size: 45px;
     font-weight: 200;
     text-align: center;
-    border-bottom: 3px #000 solid;
+    border-bottom: 3px var(--h1Color) solid;
     width: 60%;
     padding-bottom: 15px;
     margin-top: 25px;
     margin-bottom: 35px;
+    color: var(--h1Color);
 }
 
 h1 span {
@@ -45,8 +59,19 @@ h1 span {
 
 .item {
     border-radius: 25px;
+    background-color: var(--shadow);
+}
+
+.color {
     position: relative;
+    width: 100%;
+    border-radius: 25px;
+    height: 100%;
     transition: 0.1s ease-out;
+}
+
+.item:hover .color{
+    transform: translate(-6px, -6px);   
 }
 
 #alert {
@@ -70,12 +95,13 @@ h1 span {
     transition: opacity 0.8s ease-out;
 }
 
-.item:active {
-    background-color: #fff!important;
+.item:active .color {
+    background-color: var(--clickBackColor)!important;
+    transform: translate(-0%, -0%);
 }
 
 .item:active .hexa {
-    color: #000;
+    color: var(--clickTextColor);
 }
 
 .hexa {
@@ -84,7 +110,7 @@ h1 span {
     right: 25px;
     font-size: 28px;
     font-weight: 700;
-    color: #fff;
+    color: var(--hexaTextColor);
     transition: 0.1s ease-out;
 }
 
@@ -131,8 +157,8 @@ h1 span {
 }
 
 ::selection {
-    background-color: #333;
-    color: #fff;
+    background-color: var(--selectionBackColor);
+    color: var(--selectionColor);
 }
 
 .intersection-watcher {
