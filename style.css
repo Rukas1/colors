@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;700&display=swap');
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 200;
+    text-align: center;
+    border-bottom: 3px #000 solid;
+    width: 60%;
+    padding-bottom: 15px;
+    margin-top: 25px;
+    margin-bottom: 35px;
+}
+
+h1 span {
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.1em;
+    text-shadow: red 3px 0, cyan -3px 0;
+}
+
+.container {
+    display: grid;
+    width: 95%;
+    justify-content: center;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fill, 300px);
+    grid-auto-rows: 150px;
+    gap: 20px;
+}
+
+.item {
+    border-radius: 25px;
+    position: relative;
+    transition: 0.1s ease-out;
+}
+
+#alert {
+    margin-bottom: 35px;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #000;
+    position: fixed;
+    top: 0;
+    height: 30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 30px;
+    background-color: #ffcc00;
+    overflow: scroll;
+    z-index: 1;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.item:active {
+    background-color: #fff!important;
+}
+
+.item:active .hexa {
+    color: #000;
+}
+
+.hexa {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    transition: 0.1s ease-out;
+}
+
+@media (min-width: 2000px) {
+    h1 {
+        font-size: 60px;
+    }
+    .container {
+        grid-template-columns: repeat(auto-fill, 600px);
+        grid-auto-rows: 300px;
+    }
+    .hexa {
+        font-size: 45px;
+    }
+}
+
+@media (max-width: 692px) {
+    h1 {
+        font-size: 40px;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        max-width: 85%;
+    }
+}
+@media (max-width: 615px) {
+    h1 {
+        width: 89%;
+    }
+}
+@media (max-width: 400px) {
+    h1 {
+        font-size: 35px;
+        width: 90%;
+    }
+    #alert {
+        font-size: 10px;
+    }
+}
+@media (max-width: 340px) {
+    h1 {
+        font-size: 29px;
+    }
+}
+
+::selection {
+    background-color: #333;
+    color: #fff;
+}
+
+.intersection-watcher {
+    height: 400px;
+    width: 100%;
+}
